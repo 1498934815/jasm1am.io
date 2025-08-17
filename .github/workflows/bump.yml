@@ -10,10 +10,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_PAT }}
-      - run: |
+      - name: bump count
+        run: |
           n=$(cat count.json)
           echo $((n+1)) > count.json
-      - run: |
+      - name: commit
+        run: |
           git config user.name  bot
           git config user.email bot@example.com
           git add count.json
