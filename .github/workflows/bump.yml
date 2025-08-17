@@ -1,4 +1,5 @@
 name: bump
+
 on:
   repository_dispatch:
     types: [bump]
